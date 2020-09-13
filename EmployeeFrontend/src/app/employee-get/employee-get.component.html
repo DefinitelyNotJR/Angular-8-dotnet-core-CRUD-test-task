@@ -1,0 +1,25 @@
+<h2>Сотрудники</h2>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>#</td>
+        <td>Должность</td>
+        <td>Сотрудник</td>
+        <td>Оклад</td>
+        <td>Дата назначения</td>
+        <td>Дата увольнения</td>
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr *ngFor="let employee of employees; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ employee.Position }}</td>
+            <td>{{ employee.Name }}</td>
+            <td>{{ employee.Salary }}</td>
+            <td>{{ employee.DateStartedWorking }}</td>
+            <td>{{ employee.DateStoppedWorking }}</td>
+        </tr>
+    </tbody>
+  </table>

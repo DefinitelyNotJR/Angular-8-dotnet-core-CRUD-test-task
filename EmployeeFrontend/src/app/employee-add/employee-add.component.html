@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label class="col-md-6">Фамилия</label>
+          
+          <input type="text" class="form-control" 
+          formControlName="EmSurname"
+          #EmSurname/>
+        </div>
+        <div class="form-group">
+            <label class="col-md-6">Имя</label>
+            
+            <input type="text" class="form-control" 
+            formControlName="EmName"
+            #EmName/>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6">Должность</label>
+            
+            <!-- <input type="text" class="form-control" 
+            formControlName="Position"
+            #Position/> -->
+
+            <select class="form-control" formControlName="Position"
+            #Position>
+                <option *ngFor="let job of jobs" [value]="job.Name">{{job.Name}}</option>
+            </select>
+
+          </div>
+          
+          <div class="form-group">
+            <label class="col-md-6">Зарплата</label>
+            
+            <input type="text" class="form-control" 
+            formControlName="Salary"
+            #Salary/>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6">Дата начала работы</label>
+            
+            <input type="date" class="form-control" 
+            formControlName="DateStartedWorking"
+            #DateStartedWorking/>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6">Дата увольнения</label>
+            
+            <input type="date" class="form-control" 
+            formControlName="DateStoppedWorking"
+            #DateStoppedWorking />
+          </div>
+        
+        
+        <div class="form-group">
+          <button (click) = "addEmployee(EmName.value, EmSurname.value, Position.value, Salary.value, DateStartedWorking.value, DateStoppedWorking.value)" type="button" class="btn btn-primary">Добавить нового сотрудника</button>
+        </div>
+      </form>
+    </div>
+  </div>
